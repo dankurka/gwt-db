@@ -21,13 +21,14 @@ import com.googlecode.gwtdb.client.Get;
 import com.googlecode.gwtdb.client.Id;
 import com.googlecode.gwtdb.client.Limit;
 import com.googlecode.gwtdb.client.Order;
+import com.googlecode.gwtdb.client.Order.SortOrder;
 import com.googlecode.gwtdb.client.Range;
 import com.googlecode.gwtdb.client.Save;
-import com.googlecode.gwtdb.client.Order.SortOrder;
+import com.googlecode.gwtdb.client.Storage;
 
 import java.util.List;
 
-public interface DB {
+public interface PersonStorage extends Storage {
 
   @Create
   public Person createPerson();
