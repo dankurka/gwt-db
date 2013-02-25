@@ -11,22 +11,10 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.googlecode.gwtdb.client;
+package com.googlecode.gwtdb.client.example;
 
-import java.util.List;
+public interface Address {
+  public void setZipCode(String code);
 
-public interface Person {
-  public void setId();
-
-  public String getId();
-
-  public void setName();
-
-  public String getName();
-
-  public List<Address> getAddress();
-
-  public void setAddress(List<Address> addresses);
-
-  // other properties
+  public String getZipCode();
 }
