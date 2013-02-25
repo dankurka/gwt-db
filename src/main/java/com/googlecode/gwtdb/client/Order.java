@@ -1,4 +1,4 @@
-package com.googlecode.gwtdb.client.example;
+package com.googlecode.gwtdb.client;
 
 public @interface Order {
 
