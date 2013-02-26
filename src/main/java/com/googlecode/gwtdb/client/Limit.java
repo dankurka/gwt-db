@@ -2,6 +2,6 @@ package com.googlecode.gwtdb.client;
 
 public @interface Limit {
 
-  int value();
+  int value() default -1;
 
 }

@@ -16,15 +16,15 @@ package com.googlecode.gwtdb.client.example;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 import com.googlecode.gwtdb.client.Create;
+import com.googlecode.gwtdb.client.Cursor;
 import com.googlecode.gwtdb.client.Delete;
 import com.googlecode.gwtdb.client.Get;
 import com.googlecode.gwtdb.client.Id;
 import com.googlecode.gwtdb.client.Limit;
-import com.googlecode.gwtdb.client.Order;
-import com.googlecode.gwtdb.client.Order.SortOrder;
-import com.googlecode.gwtdb.client.Range;
+import com.googlecode.gwtdb.client.LowerBound;
 import com.googlecode.gwtdb.client.Save;
 import com.googlecode.gwtdb.client.Storage;
+import com.googlecode.gwtdb.client.UpperBound;
 
 import java.util.List;
 
@@ -46,11 +46,13 @@ public interface PersonStorage extends Storage {
   @Get("name")
   public void getByName(String name, AsyncCallback<List<Person>> callback);
 
+  @Get("name")
+  public void getByName1(String name, AsyncCallback<Cursor<Person>> callback);
+
   @Get("age")
-  @Range(from = "from", to = "to")
   @Limit(10)
-  @Order(SortOrder.ASC)
-  public void getByAge(int from, int to, AsyncCallback<List<Person>> callback);
+  public void getByAge(@LowerBound(including = true) int from,
+      @UpperBound(including = false) int to, AsyncCallback<List<Person>> callback);
 
   @Get({"firstname", "name"})
   public void getByFullName(String firstName, String name, AsyncCallback<List<Person>> callback);

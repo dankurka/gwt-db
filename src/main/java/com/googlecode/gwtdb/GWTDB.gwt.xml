@@ -1,3 +1,6 @@
 <module>
 	<inherits name='com.google.gwt.user.User' />
+	<entry-point
+		class="com.googlecode.gwtdb.client.ExampleEntryPoint">
+	</entry-point>
 </module>
